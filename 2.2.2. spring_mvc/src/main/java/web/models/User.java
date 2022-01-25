@@ -16,28 +16,25 @@ public class User {
 
 
     @Column
-    private byte age;
+    private String lastname;
 
 
     @Column
-    private int salary;
+    private String email;
 
     public User() {
     }
 
-    public User(String name, byte age, int salary) {
+    public User(String name, String lastname, String email) {
         this.name = name;
-        this.age = age;
-        this.salary = salary;
+        this.lastname = lastname;
+        this.email = email;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -47,29 +44,20 @@ public class User {
         this.name = name;
     }
 
-    public byte getAge() {
-        return age;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setAge(byte age) {
-        this.age = age;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public int getSalary() {
-        return salary;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
-                '}';
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
+

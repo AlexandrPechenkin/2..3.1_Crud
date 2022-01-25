@@ -43,8 +43,8 @@ public class UserDaoImp implements UserDao {
     public void update(long id, User user) {
         User userUpdate = getOne(id);
         userUpdate.setName(user.getName());
-        userUpdate.setAge(user.getAge());
-        userUpdate.setSalary(user.getSalary());
+        userUpdate.setLastname(user.getLastname());
+        userUpdate.setEmail(user.getEmail());
     }
 }
 

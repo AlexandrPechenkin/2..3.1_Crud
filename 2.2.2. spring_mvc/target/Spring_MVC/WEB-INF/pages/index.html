@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="UTF-8"/>
+    <title>users</title>
 </head>
 <body>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+    <table border="6">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>lastname</th>
+<!--            <th>email</th>-->
+            <th>actions</th>
+
+
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:utext="${user.getId()}">...</td>
+            <td th:utext="${user.getName()}">...</td>
+            <td th:utext="${user.getLastname()}">...</td>
+<!--            <td th:utext="${user.getEmail()}">...</td>-->
+            <td>
+                <a th:href="@{/users/edit/{id}(id=${user.getId()})}">Edit </a>
+                <br>
+                <a th:href="@{/users/{id}(id=${user.getId()})}">Information </a>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="/users/new">New user</a>
 </div>
-<a href="users.html">Get a list of all users </a>
 </body>
 </html>
